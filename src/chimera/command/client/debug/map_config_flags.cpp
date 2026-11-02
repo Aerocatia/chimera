@@ -72,8 +72,7 @@ namespace Chimera {
                     auto tag_data = reinterpret_cast<Bitmap *>(tag.data);
 
                     // Clear HUD scale flags.
-                    SET_FLAG(tag_data->flags, BITMAP_FLAGS_HALF_HUD_SCALE_BIT, false);
-                    SET_FLAG(tag_data->flags, BITMAP_FLAGS_FORCE_HUD_USE_HIGHRES_SCALE_BIT, false);
+                    tag_data->flags &= ~BITMAP_SCALE_FLAGS_MASK;
                 }
             }
         }
